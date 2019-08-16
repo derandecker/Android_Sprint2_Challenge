@@ -60,8 +60,10 @@ class MainActivity : AppCompatActivity() {
 
             notificationManager.notify(NOTIFICATION_ID, notificationBuilder.build())
 
-
+            //convert shoppingList to string and remove [ and ]
             val shoppingString = shoppingList.toString().drop(1).dropLast(1)
+
+            //debug log to make sure string works properly
             Log.d("SHOPPINGLIST", shoppingString)
 
             // send implicit intent with list of items
