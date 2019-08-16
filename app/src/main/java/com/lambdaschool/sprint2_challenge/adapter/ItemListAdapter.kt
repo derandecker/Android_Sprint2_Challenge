@@ -38,6 +38,10 @@ class ItemListAdapter(val imageList: IntArray, val itemNameList: Array<String>)
         val image = getDrawable(holder.image.context, imageList[position])
         holder.image.setImageDrawable(image)
         holder.itemName.text = itemNameList[position]
+
+        //add an ischecked boolean to ShoppingItem and use that to set the
+        //state of the toggle when view is binded
+
         holder.toggle.setOnClickListener {
             when (holder.toggle.isChecked) {
                 true -> MainActivity.shoppingList.add(itemNameList[position])
