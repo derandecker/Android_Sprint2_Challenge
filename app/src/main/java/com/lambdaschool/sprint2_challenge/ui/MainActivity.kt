@@ -3,6 +3,7 @@ package com.lambdaschool.sprint2_challenge.ui
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
@@ -38,6 +39,7 @@ class MainActivity : AppCompatActivity() {
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         val channelId = "$packageName.deranchannel"
 
+
         btn_send_list.setOnClickListener {
             // send notification saying Order has been placed
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -58,9 +60,18 @@ class MainActivity : AppCompatActivity() {
 
             notificationManager.notify(NOTIFICATION_ID, notificationBuilder.build())
 
-            Log.d("SHOPPINGLIST", shoppingList.toString())
+
+            val shoppingString = shoppingList.toString()
+            Log.d("SHOPPINGLIST", shoppingString)
 
             // send implicit intent with list of items
+
+            val shareTextIntent = Intent().apply{
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, shoppingString)
+                type = "text/plain"
+            }
+            startActivity(shareTextIntent)
         }
 
     }
