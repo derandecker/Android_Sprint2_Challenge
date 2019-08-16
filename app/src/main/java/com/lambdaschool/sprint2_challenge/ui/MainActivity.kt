@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
     companion object {
         var shoppingList = mutableListOf<String>()
         const val NOTIFICATION_ID = 99
-        const val INTENT_KEY = "INTENT_KEY"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
