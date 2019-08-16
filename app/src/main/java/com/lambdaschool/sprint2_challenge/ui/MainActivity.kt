@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
             notificationManager.notify(NOTIFICATION_ID, notificationBuilder.build())
 
 
-            val shoppingString = shoppingList.toString()
+            val shoppingString = shoppingList.toString().drop(1).dropLast(1)
             Log.d("SHOPPINGLIST", shoppingString)
 
             // send implicit intent with list of items
