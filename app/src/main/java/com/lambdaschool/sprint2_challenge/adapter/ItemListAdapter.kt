@@ -13,7 +13,7 @@ import com.lambdaschool.sprint2_challenge.R
 import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.recycler_cardview_layout.view.*
 
-class ItemListAdapter(val imageList: List<Int>, val itemNameList: List<String>)
+class ItemListAdapter(val imageList: IntArray, val itemNameList: Array<String>)
     : RecyclerView.Adapter<ItemListAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
