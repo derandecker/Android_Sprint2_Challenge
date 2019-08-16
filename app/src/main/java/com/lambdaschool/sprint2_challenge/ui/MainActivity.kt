@@ -1,7 +1,8 @@
-package com.lambdaschool.sprint2_challenge
+package com.lambdaschool.sprint2_challenge.ui
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.lambdaschool.sprint2_challenge.R
 
 class MainActivity : AppCompatActivity() {
 
