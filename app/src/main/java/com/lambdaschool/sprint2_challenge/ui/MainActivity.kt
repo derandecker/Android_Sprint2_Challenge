@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import com.lambdaschool.sprint2_challenge.R
+import com.lambdaschool.sprint2_challenge.ShoppingItemConstants
+import com.lambdaschool.sprint2_challenge.adapter.ItemListAdapter
 import com.lambdaschool.sprint2_challenge.model.ShoppingItem
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -19,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
         rv_layout.setHasFixedSize(true)
         val manager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
-        val adapter = ImageListAdapter(ivList)
+        val adapter = ItemListAdapter(ShoppingItemConstants.ICON_IDS, ShoppingItemConstants.ITEM_NAMES_RAW)
         rv_layout.layoutManager = manager
         rv_layout.adapter = adapter
 
